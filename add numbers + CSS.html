@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>تمرین 6</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        span {
+            margin: 0 5px;
+        }
+
+        input {
+            font-size: 20px;
+            width: 20%;
+            border-radius: 10px;
+            border-width: 1px;
+            border-color: rgba(0, 0, 0, 0.57);
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div>
+    <label>
+        <input id="num1" class="input" type="text">
+    </label>
+    <span>+</span>
+    <label>
+        <input id="num2" class="input" type="text">
+    </label>
+    <span>=</span>
+    <label>
+        <input id="output" type="text" readonly>
+    </label>
+</div>
+
+<script>
+
+    // تابع برای فرمت کردن عدد و اضافه کردن جداکننده هزارگان
+    function formatNumber(num) {
+        return num.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    // تابع برای بروزرسانی مقدار خروجی
+    function updateValues() {
+        // مقدار ورودی ها (بدون جداکننده هزارگان)
+        let num1 = $('#num1').val().replace(/,/g, ''),
+            num2 = $('#num2').val().replace(/,/g, ''),
+            // بررسی اعتبار مقادیر وارد شده (عدد صحیح یا اعشاری)
+            isValid = /^-?\d+(\.\d+)?$/.test(num1) && /^-?\d+(\.\d+)?$/.test(num2);
+
+        // اگر مقادیر وارد شده معتبر بودند، جمع دو عدد و نمایش در خروجی
+        $('#output').val(isValid ? formatNumber((parseFloat(num1) + parseFloat(num2)).toString()) : '');
+    }
+
+    // هنگام ورود داده به هر کدام از ورودی ها
+    $('#num1, #num2').on('input', function() {
+        // مقدار ورودی بدون جداکننده هزارگان
+        let value = $(this).val().replace(/,/g, '');
+        let cursorPosition = this.selectionStart; // موقعیت کرسر برای حفظ مکان بعد از فرمت
+
+        // اگر مقدار وارد شده نامعتبر بود (حاوی غیر عدد یا نماد اشتباه)
+        if (!/^-?\d*\.?\d*$/.test(value)) {
+            alert('مقدار وارد شده معتبر نیست');
+            value = value.slice(0, -1); // آخرین کاراکتر اشتباه را حذف می‌کنیم
+        }
+
+        // فرمت کردن مقدار و بازگرداندن آن به ورودی
+        $(this).val(formatNumber(value));
+
+        // حفظ موقعیت کرسر بعد از تغییرات فرمت
+        this.setSelectionRange(cursorPosition + (this.value.length - value.length), cursorPosition + (this.value.length - value.length));
+
+        // بروزرسانی مقدار خروجی بعد از تغییر ورودی ها
+        updateValues();
+    });
+
+</script>
+
+</body>
+
+</html>

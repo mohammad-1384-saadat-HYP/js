@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>تمرین 7</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+<div>
+    <label>
+        <input id="input" type="text">
+    </label>
+</div>
+
+<script>
+
+    function show() {
+        let value = document.getElementById('input').value;
+        console.log(value);
+    }
+
+    document.getElementById('input').addEventListener('input', show);
+
+    let value = $('input');
+    value.on('input', function () {
+        console.log(this.value);
+    });
+
+</script>
+
+</body>
+
+</html>

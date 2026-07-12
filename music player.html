@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>تمرین 8</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #d5d5d5;
+        }
+
+        #container {
+            width: 35%;
+            height: 52vh;
+            background-color: #f0f0f0;
+            margin: 17vh auto;
+            border: 1px solid;
+            border-radius: 3px;
+            cursor: default;
+        }
+
+        #img {
+            width: 100%;
+            height: 220px;
+            margin-top: 9px;
+
+        }
+
+        #img > img {
+            height: 100%;
+            margin-left: 66px;
+            cursor: pointer;
+        }
+
+        #playlist {
+            position: absolute;
+            top: 107px;
+            margin-left: 45px;
+            cursor: pointer;
+        }
+
+        #list {
+            background-color: #e7e7e7;
+            width: 150px;
+            position: absolute;
+            top: 130px;
+            right: 250px;
+            border: 1px solid;
+            border-radius: 10px;
+        }
+
+        .music-lists {
+            display: flex;
+            direction: rtl;
+            align-items: center;
+            margin: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .music-lists:hover {
+            background-color: #dedede;
+        }
+
+        .options {
+            width: 65%;
+            font-size: 11px;
+        }
+
+        .options div:first-child {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .texts {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 0 auto;
+        }
+
+        .image {
+            width: 35%;
+        }
+
+        .little-images {
+            width: 100%;
+        }
+
+        #specifications {
+            width: 100%;
+            height: 49px;
+            text-align: center;
+        }
+
+        #specifications div {
+            margin-top: 5px;
+            width: 40%;
+        }
+
+        #specifications div:first-child {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #time {
+            width: 100%;
+            height: 20px;
+            display: flex;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+            cursor: default;
+        }
+
+        #present, #main-time {
+            width: 37px;
+            text-align: center;
+        }
+
+        #time-line {
+            width: 62%;
+            height: 4px;
+            position: relative;
+            margin: 0 5px;
+        }
+
+        #main-line {
+            width: 100%;
+            height: 100%;
+            background-color: #d5d5d5;
+            cursor: pointer;
+        }
+
+        #sub-line {
+            width: 0;
+            height: 100%;
+            background-color: #808080;
+            position: absolute;
+            top: 0;
+            cursor: pointer;
+        }
+
+        #circle {
+            width: 11px;
+            height: 12px;
+            background-color: #1e1e1e;
+            border-radius: 50%;
+            position: absolute;
+            top: -4px;
+            right: 95%;
+            cursor: pointer;
+        }
+
+        #keys {
+            text-align: center;
+            height: 20px;
+            margin-top: 4px;
+        }
+
+        .keys {
+            height: 15px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        #forward-step {
+            margin-right: 0;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div id="container">
+    <div id="img">
+        <img id="play-img" class="play-pause" src="./images/Mohsen-Chavoshi.png" alt="محسن چاوشی">
+        <svg id="playlist" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+             fill="#000000">
+            <path d="M640-160q-50 0-85-35t-35-85q0-50 35-85t85-35q11 0 21 1.5t19 6.5v-328h200v80H760v360q0 50-35 85t-85 35ZM120-320v-80h320v80H120Zm0-160v-80h480v80H120Zm0-160v-80h480v80H120Z"/>
+        </svg>
+        <div id="list" style="display: none">
+            <div id="music1" class="music-lists music1">
+                <div class="options music1">
+                    <div class="texts music1">The Rumbling</div>
+                    <div class="texts music1">SiM</div>
+                </div>
+                <div class="image music1">
+                    <img class="little-images music1" src="./images/The-Rumbling.png" alt="The Rumbling">
+                </div>
+            </div>
+            <div id="music2" class="music-lists music2">
+                <div class="options music2">
+                    <div class="texts music2">ساعت دیواری</div>
+                    <div class="texts music2">محسن چاوشی</div>
+                </div>
+                <div class="image music2">
+                    <img class="little-images music2" src="./images/Mohsen-Chavoshi.png" alt="محسن چاوشی">
+                </div>
+            </div>
+            <div id="music3" class="music-lists music3">
+                <div class="options music3">
+                    <div class="texts music3">یه باری از امروز رو دوشته</div>
+                    <div class="texts music3">حامد زمانی</div>
+                </div>
+                <div class="image music3">
+                    <img class="little-images music3" src="./images/Hamed-Zamani.png" alt="حامد زمانی">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="specifications">
+        <div id="musicName" class="texts"></div>
+        <div id="musician" class="texts"></div>
+    </div>
+    <div id="time">
+        <div id="present">00:00</div>
+        <div id="time-line">
+            <div id="main-line"></div>
+            <div id="sub-line"></div>
+            <div id="circle"></div>
+        </div>
+        <div id="main-time">00:00</div>
+    </div>
+    <div id="keys">
+        <svg id="backward-step" class="keys" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+            <path d="M267.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29l0-320c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192 160L64 241 64 96c0-17.7-14.3-32-32-32S0 78.3 0 96L0 416c0 17.7 14.3 32 32 32s32-14.3 32-32l0-145 11.5 9.6 192 160z"/>
+        </svg>
+        <svg id="backward" class="keys" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M459.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29l0-320c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4L288 214.3l0 41.7 0 41.7L459.5 440.6zM256 352l0-96 0-128 0-32c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192 160C4.2 237.5 0 246.5 0 256s4.2 18.5 11.5 24.6l192 160c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29l0-64z"/>
+        </svg>
+        <svg id="play-key" class="keys play-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+            <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+        </svg>
+        <svg id="pause-key" class="keys play-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+             style="display: none">
+            <path d="M48 64C21.5 64 0 85.5 0 112L0 400c0 26.5 21.5 48 48 48l32 0c26.5 0 48-21.5 48-48l0-288c0-26.5-21.5-48-48-48L48 64zm192 0c-26.5 0-48 21.5-48 48l0 288c0 26.5 21.5 48 48 48l32 0c26.5 0 48-21.5 48-48l0-288c0-26.5-21.5-48-48-48l-32 0z"/>
+        </svg>
+        <svg id="forward" class="keys" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M52.5 440.6c-9.5 7.9-22.8 9.7-34.1 4.4S0 428.4 0 416L0 96C0 83.6 7.2 72.3 18.4 67s24.5-3.6 34.1 4.4L224 214.3l0 41.7 0 41.7L52.5 440.6zM256 352l0-96 0-128 0-32c0-12.4 7.2-23.7 18.4-29s24.5-3.6 34.1 4.4l192 160c7.3 6.1 11.5 15.1 11.5 24.6s-4.2 18.5-11.5 24.6l-192 160c-9.5 7.9-22.8 9.7-34.1 4.4s-18.4-16.6-18.4-29l0-64z"/>
+        </svg>
+        <svg id="forward-step" class="keys" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+            <path d="M52.5 440.6c-9.5 7.9-22.8 9.7-34.1 4.4S0 428.4 0 416L0 96C0 83.6 7.2 72.3 18.4 67s24.5-3.6 34.1 4.4l192 160L256 241l0-145c0-17.7 14.3-32 32-32s32 14.3 32 32l0 320c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-145-11.5 9.6-192 160z"/>
+        </svg>
+    </div>
+</div>
+
+<audio id="audio" preload="auto">
+    <source src="" type="audio/mpeg">
+</audio>
+
+<script>
+
+    //گرفتن خود آهنگ
+    const music = document.getElementById('audio');
+    //گرفتن تگ مربوط به خواننده
+    let musician = document.getElementById('musician');
+    //گرفتن تگ مربوط به نام آهنگ
+    let musicName = document.getElementById('musicName');
+    //لیست آهنگ ها
+    const songs = ['The-Rumbling', 'Mohsen-Chavoshi', 'Hamed-Zamani'];
+    //موقعیت هر آهنگ
+    let songIndex = 0;
+    //گرفتن آهنگ اول درون لیست
+    const music1 = document.getElementById('music1');
+    //گرفتن آهنگ دوم درون لیست
+    const music2 = document.getElementById('music2');
+    //گرفتن آهنگ سوم درون لیست
+    const music3 = document.getElementById('music3');
+
+    //تابع تغییرات آهنگ با تغییر موقعیت هر آهنگ
+    function musicPlaying(song) {
+        switch (songIndex) {
+            case 0:
+                musicName.innerHTML = 'The-Rumbling';
+                musician.innerHTML = 'SiM';
+                break;
+            case 1:
+                musicName.innerHTML = 'ساعت دیواری';
+                musician.innerHTML = 'محسن چاوشی';
+                break;
+            case 2:
+                musicName.innerHTML = 'یه باری از امروز رو دوشته';
+                musician.innerHTML = 'حامد زمانی';
+                break;
+        }
+        music.src = `./music/${song}.mp3`;
+        document.getElementById('play-img').src = `./images/${song}.png`;
+    }
+
+    musicPlaying(songs[songIndex]);
+
+    //تابع گرفتن زمان آهنگ و تبدیل آن به دقیقه و ثانیه
+    function time(time) {
+        let min = Math.trunc(time / 60);
+        let sec = Math.trunc(time - (min * 60));
+        if (sec > 9) {
+            return '0' + String(min) + ':' + String(sec);
+        } else {
+            return '0' + String(min) + ':0' + String(sec);
+        }
+    }
+
+    //افزودن روبداد timeupdate و بکار گرفتن تابع time در تابع inline
+    music.addEventListener('loadeddata', function () {
+        music.addEventListener('timeupdate', function () {
+            document.getElementById('sub-line').style.width = (music.currentTime * 100 / music.duration) + '%';
+            document.getElementById('circle').style.right = (95 * (1 - (music.currentTime / music.duration))) + '%';
+            document.getElementById('present').innerText = time(music.currentTime);
+        });
+        document.getElementById('main-time').innerText = time(music.duration);
+    });
+
+    //تابع شروع یا توقف آهنگ
+    function play() {
+        if (music.paused) {
+            music.play();
+            document.getElementById('play-key').style.display = 'none';
+            document.getElementById('pause-key').style.display = 'inline';
+        } else {
+            music.pause();
+            document.getElementById('pause-key').style.display = 'none';
+            document.getElementById('play-key').style.display = 'inline';
+        }
+    }
+
+    //افزودن روبداد کلیک برای اجرای تابع play
+    document.querySelectorAll('.play-pause').forEach(x => x.addEventListener('click', play));
+
+    //تابع نوار پیشرفت زمان آهنگ
+    function bar(e) {
+        const offset = e.offsetX;
+        const width = this.clientWidth;
+        const totalTime = music.duration;
+        music.currentTime = (offset / width) * totalTime;
+    }
+
+    //افزودن رویداد کلیک برای اجرای تابع bar
+    document.getElementById('time-line').addEventListener('click', bar);
+
+    //تابع جلو رفتن 5 ثانیه ای آهنگ
+    function forward() {
+        if (music.currentTime + 5 < music.duration) {
+            music.currentTime += 5;
+        } else {
+            next();
+            musicsStyle();
+        }
+    }
+
+    //افزودن رویداد کلیک برای اجرای تابع forward
+    document.getElementById('forward').addEventListener('click', forward);
+
+    //تابع عقب رفتن 5 ثانیه ای آهنگ
+    function backward() {
+        if (music.currentTime - 5 >= 0) {
+            music.currentTime -= 5;
+        } else {
+            music.currentTime = 0;
+        }
+    }
+
+    //افزودن رویداد کلیک برای اجرای تابع backward
+    document.getElementById('backward').addEventListener('click', backward);
+
+    //تابع آهنگ بعدی
+    function next() {
+        if (songIndex === 0 || songIndex === 1) {
+            songIndex += 1;
+        } else {
+            songIndex = 0;
+        }
+        musicPlaying(songs[songIndex]);
+        music.play();
+        document.getElementById('play-key').style.display = 'none';
+        document.getElementById('pause-key').style.display = 'inline';
+        musicsStyle();
+    }
+
+    //افزودن رویداد کلیک برای اجرای تابع next
+    document.getElementById('forward-step').addEventListener('click', next);
+    //افزودن رویداد ended برای اجرای تابع next
+    music.addEventListener('ended', next);
+
+    //تابع آهنگ قبلی
+    function previous() {
+        if (songIndex === 1 || songIndex === 2) {
+            songIndex -= 1;
+        } else {
+            songIndex = 2;
+        }
+        musicPlaying(songs[songIndex]);
+        music.play();
+        document.getElementById('play-key').style.display = 'none';
+        document.getElementById('pause-key').style.display = 'inline';
+        musicsStyle();
+    }
+
+    //افزودن رویداد کلیک برای اجرای تابع previous
+    document.getElementById('backward-step').addEventListener('click', previous);
+
+    //گرفتن لیست آهنگ ها
+    const list = document.getElementById('list');
+
+    //تابع نمایش دادن لیست آهنگ ها
+    function show() {
+        if (list.style.display === 'none') {
+            list.style.display = 'block';
+        } else {
+            list.style.display = 'none';
+        }
+        musicsStyle();
+    }
+
+    //افزودن رویداد کلیک برای اجرای تابع show
+    document.getElementById('playlist').addEventListener('click', show);
+
+    //افزودن رویداد کلیک به تمامی عناصری که کلاس music1 دارند برای اجرای آهنگ مورد نظر درون لیست اهنگ ها
+    document.querySelectorAll('.music1').forEach(x => x.addEventListener('click', function () {
+        songIndex = 0;
+        musicPlaying(songs[songIndex]);
+        music.addEventListener('loadeddata', function () {
+            music.play();
+            document.getElementById('play-key').style.display = 'none';
+            document.getElementById('pause-key').style.display = 'inline';
+        });
+        list.style.display = 'none';
+    }));
+
+    //افزودن رویداد کلیک به تمامی عناصری که کلاس music1 دارند برای اجرای آهنگ مورد نظر درون لیست اهنگ ها
+    document.querySelectorAll('.music2').forEach(x => x.addEventListener('click', function () {
+        songIndex = 1;
+        musicPlaying(songs[songIndex]);
+        music.addEventListener('loadeddata', function () {
+            music.play();
+            document.getElementById('play-key').style.display = 'none';
+            document.getElementById('pause-key').style.display = 'inline';
+        });
+        list.style.display = 'none';
+    }));
+
+    //افزودن رویداد کلیک به تمامی عناصری که کلاس music1 دارند برای اجرای آهنگ مورد نظر درون لیست اهنگ ها
+    document.querySelectorAll('.music3').forEach(x => x.addEventListener('click', function () {
+        songIndex = 2;
+        musicPlaying(songs[songIndex]);
+        music.addEventListener('loadeddata', function () {
+            music.play();
+            document.getElementById('play-key').style.display = 'none';
+            document.getElementById('pause-key').style.display = 'inline';
+        });
+        list.style.display = 'none';
+    }));
+
+    // const music1 = document.querySelectorAll('.music1');
+    // const music2 = document.querySelectorAll('.music2');
+    // const music3 = document.querySelectorAll('.music3');
+    // let songIndexArr = [0, 1, 2];
+    //
+    // function changeMusic(e) {
+    //     if (e.target === music1) {
+    //         songs[songIndex] = songIndexArr[0];
+    //     } else if (e.target === music2) {
+    //         songs[songIndex] = songIndexArr[1];
+    //     } else if (e.target === music3) {
+    //         songs[songIndex] = songIndexArr[2];
+    //     }
+    //     musicPlaying(songs[songIndex]);
+    //     music.play();
+    //     document.getElementById('play-key').style.display = 'none';
+    //     document.getElementById('pause-key').style.display = 'inline';
+    // }
+    //
+    // music1.forEach(x => x.addEventListener('click', changeMusic));
+    // music2.forEach(x => x.addEventListener('click', changeMusic));
+    // music3.forEach(x => x.addEventListener('click', changeMusic));
+
+    // //تابع مشخص شدن آهنگ انتخاب شده در لیست آهنگ ها
+    // function chosen() {
+    //     const music1 = document.getElementById('music1');
+    //     const music2 = document.getElementById('music2');
+    //     const music3 = document.getElementById('music3');
+    //     if (songIndex === 0) {
+    //         music1.style.border = '1px solid #000000';
+    //         music1.style.padding = '3px';
+    //         music1.style.borderRadius = '5px';
+    //     } else if (songIndex === 1) {
+    //         music2.style.border = '1px solid #000000';
+    //         music1.style.padding = '3px';
+    //         music1.style.borderRadius = '5px';
+    //     } else if (songIndex === 2) {
+    //         music3.style.border = '1px solid #000000';
+    //         music1.style.padding = '3px';
+    //         music1.style.borderRadius = '5px';
+    //     }
+    //
+    // }
+    //
+    // chosen();
+
+    //تابع استایل دهی به آهنگ های درون لیست آهنگ ها
+    function musicsStyle() {
+        if (songIndex === 0) {
+            music1.style.border = '1px solid';
+            music1.style.borderRadius = '5px';
+            music2.style.border = 'none';
+            music2.style.borderRadius = 'none';
+            music3.style.border = 'none';
+            music3.style.borderRadius = 'none';
+        } else if (songIndex === 1) {
+            music1.style.border = 'none';
+            music1.style.borderRadius = 'none';
+            music2.style.border = '1px solid';
+            music2.style.borderRadius = '5px';
+            music3.style.border = 'none';
+            music3.style.borderRadius = 'none';
+        } else if (songIndex === 2) {
+            music1.style.border = 'none';
+            music1.style.borderRadius = 'none';
+            music2.style.border = 'none';
+            music2.style.borderRadius = 'none';
+            music3.style.border = '1px solid';
+            music3.style.borderRadius = '5px';
+        }
+    }
+
+</script>
+
+</body>
+
+</html>

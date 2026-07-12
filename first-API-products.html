@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>first API products</title>
+    <!--    برای واکنش گرایی توی موبایل-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="fonts/fontawesome-free-6.7.2-web/css/all.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!--    این مهمه که لینک استایل های خودت از fontawesome یا بقیه جلوتر باشه-->
+    <link rel="stylesheet" href="first-API-products.css">
+    <script src="jquery-3.7.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body>
+
+<!--منوی بالای سایت-->
+<div id="upperMenu" class="displayNone">
+    <div id="search" class="iconHolders">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <div id="upperMenuTitle" class="iconHolders">
+        <h1>کفش</h1>
+    </div>
+    <div id="upperMenuIcon" class="iconHolders">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+</div>
+
+<!--نگه دارنده باکس محصولات-->
+<div id="productsBox">
+    <div id="productsBoxProducts">
+        <!--نگه دارنه محصولات-->
+        <div id="productsContainer"></div>
+        <!--تعداد صفحات محصولات-->
+        <div id="page">
+            <div id="pageHolder">
+                <button id="previousPage">
+                    <i class="fa-solid fa-angle-left"></i>
+                </button>
+                <div id="numberPage"></div>
+                <button id="nextPage">
+                    <i class="fa-solid fa-angle-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--    نگه دارنده فیلتر ها-->
+    <div id="productsBoxGrouping">
+        <div id="groupingContainer">
+            <div id="exit">
+                <i class="fa-solid fa-check check"></i>
+                <i class="fa-solid fa-x exit"></i>
+            </div>
+            <div id="filter">
+                <div id="filterContainerTitle">
+                    <i class="fa-solid fa-caret-right"></i>
+                    <i class="fa-solid fa-caret-down displayNone"></i>
+                    <div id="titleFilterContainerTitle">دسته بندی ها</div>
+                </div>
+                <div id="filterContainerCategory" class="displayNone"></div>
+            </div>
+            <div id="colors"></div>
+        </div>
+    </div>
+</div>
+
+<!--منوی پایین سایت-->
+<div id="downMenu">
+    <div id="profile">
+        <i class="fa-solid fa-circle-user"></i>
+        <div>پروفایل</div>
+    </div>
+    <div id="filters">
+        <i class="fa-solid fa-sliders"></i>
+        <div>فیلتر ها</div>
+    </div>
+    <div id="home">
+        <i class="fa-solid fa-house-chimney"></i>
+        <div>خانه</div>
+    </div>
+</div>
+
+<!--نگه دارنده محصول منتخب-->
+<div id="chosenProduct"></div>
+<!--مودال مربوط به تصویر محصول منتخب-->
+<div id="chosenProductModal"></div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="first-API-products.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Todo list</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(to left bottom, #de00a4, #0000ff) no-repeat fixed;
+            display: grid;
+            place-items: center;
+        }
+
+        #container {
+            width: 350px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        h2 {
+            text-align: center;
+            padding: 5px 0;
+        }
+
+        #input-box {
+            display: flex;
+        }
+
+        #input {
+            width: 100%;
+            height: 35px;
+            font-size: 20px;
+            padding: 3px;
+        }
+
+        #check {
+            width: 30px;
+            margin-left: 5px;
+            margin-right: 5px;
+            border: none;
+            background-color: #ffffff;
+        }
+
+        svg {
+            display: block;
+            height: 100%;
+            fill: #009cff;
+        }
+
+        #break {
+            width: 100%;
+            height: 3px;
+            background: #dedede;
+            margin: 10px 0;
+        }
+
+        #list {
+            width: 100%;
+        }
+
+        #list-ol {
+            list-style-type: none;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            border: 1px solid;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .text {
+            width: 100%;
+            height: 100%;
+            font-size: 20px;
+            margin: 0;
+            cursor: default;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .icon {
+            width: 5%;
+            height: 100%;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .edit, .delete {
+            margin: 0 5px;
+        }
+
+        .delete {
+            color: #ff0000;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div id="container">
+    <h2>Todo List</h2>
+    <div id="input-box">
+        <label for="input"></label><input type="text" id="input">
+        <button id="check">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/>
+            </svg>
+        </button>
+    </div>
+    <div id="break"></div>
+    <div id="list">
+        <ol id="list-ol"></ol>
+    </div>
+</div>
+
+<script>
+
+    //گرفتن input
+    const input = document.getElementById('input');
+    //گرفتن button
+    const checkButton = document.getElementById('check');
+    //گرفتن list-ol
+    const listOl = document.getElementById('list-ol');
+
+    //تابع برای استایل دهی به دکمه ثبت کارها
+    function buttonStyles() {
+        if (input.value.trim() !== '') {
+            checkButton.removeAttribute('disabled');
+            checkButton.style.opacity = '1';
+            checkButton.style.cursor = 'pointer';
+        } else {
+            checkButton.setAttribute('disabled', 'disabled');
+            checkButton.style.opacity = '0.5';
+            checkButton.style.cursor = 'default';
+        }
+    }
+
+    buttonStyles();
+
+    //افزودن رویداد input برای اجرای تابع buttonStyles
+    input.addEventListener('input', buttonStyles);
+
+    //تابع ساخت لیست
+    function building() {
+        if (input.value.trim() !== '') {
+            const li = document.createElement('li');
+            listOl.appendChild(li);
+            const div = document.createElement('div');
+            div.className = 'text';
+            div.textContent = input.value;
+            li.appendChild(div);
+            const editIcon = document.createElement('i');
+            editIcon.className = 'icon edit fa-solid fa-pen';
+            li.appendChild(editIcon);
+            const deleteIcon = document.createElement('i');
+            deleteIcon.className = 'icon delete fa-solid fa-trash';
+            li.appendChild(deleteIcon);
+            let List = JSON.parse(localStorage.getItem('List')) || [];
+            List.push(input.value);
+            localStorage.setItem('List', JSON.stringify(List));
+            input.value = '';
+            buttonStyles();
+        }
+    }
+
+    //افزودن رویداد کلیک به checkButton
+    checkButton.addEventListener('click', building);
+
+    //افزودن رویداد کلیک به دکمه Enter درون صفحه کلید
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            building();
+        }
+    });
+
+    //ایجاد آرایه یا گرفتن آن هنگام بارگذاری کامل کد های html و به محض باز کردن صفحه وب
+    document.addEventListener('DOMContentLoaded', () => {
+        let List = JSON.parse(localStorage.getItem('List') || '[]');
+        List.forEach(item => {
+            const li = document.createElement('li');
+            listOl.appendChild(li);
+            const div = document.createElement('div');
+            div.className = 'text';
+            div.textContent = item;
+            li.appendChild(div);
+            const editIcon = document.createElement('i');
+            editIcon.className = 'icon edit fa-solid fa-pen';
+            li.appendChild(editIcon);
+            const deleteIcon = document.createElement('i');
+            deleteIcon.className = 'icon delete fa-solid fa-trash';
+            li.appendChild(deleteIcon);
+        });
+    });
+
+    //ایجاد یک متغیر خالی برای استفاده در تابع editLocalStorage
+    let content;
+
+    //تابع برای شناسایی دکمه کلیک شده (بین دکمه ویرایش و حذف)
+    listOl.addEventListener('click', (e) => {
+        if (e.target.className.includes('edit')) {
+            content = e.target.parentElement.children[0];
+            editLocalStorage(content.textContent);
+        } else if (e.target.className.includes('delete')) {
+            e.target.parentElement.remove();
+            deleteLocalStorage(e.target.parentElement.children[0].textContent);
+        }
+    });
+
+    //تابع ویرایش در localStorage
+    function editLocalStorage(listLi) {
+        let List = JSON.parse(localStorage.getItem('List')) || [];
+        for (let i = 0; i < List.length; i++) {
+            if (List[i] === listLi) {
+                let changed = prompt('Change Your Text: ', listLi);
+                if (changed === null) {
+                    alert("Your Text Didn't Change");
+                } else if (changed.trim() === '') {
+                    alert("Your Text Didn't Change");
+                } else {
+                    List[i] = changed;
+                    content.textContent = changed;
+                }
+            }
+        }
+        localStorage.setItem('List', JSON.stringify(List))
+    }
+
+    //تابع حذف در localStorage
+    function deleteLocalStorage(listLi) {
+        let List = JSON.parse(localStorage.getItem('List')) || [];
+        for (let i = 0; i < List.length; i++) {
+            if (List[i] === listLi) {
+                List.splice(i, 1);
+                buttonStyles();
+            }
+        }
+        if (List.length === 0) {
+            localStorage.clear();
+        } else {
+            localStorage.setItem('List', JSON.stringify(List));
+        }
+    }
+
+</script>
+
+</body>
+
+</html>

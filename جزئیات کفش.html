@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>جزئیات کفش</title>
+    <link rel="stylesheet" href="جزئیات%20کفش.css">
+    <link href="fonts/fontawesome-free-6.7.2-web/css/all.css" rel="stylesheet">
+    <script src="jquery-3.7.1.js"></script>
+
+</head>
+
+<body>
+
+<div id="menuContainer">
+    <div id="menu">
+        <div class="menuItems">صفحه اصلی</div>
+        <div class="menuItems">محصولات</div>
+        <div class="menuItems">مقالات</div>
+        <div class="menuItems">درباره ما</div>
+        <div class="menuItems">تماس با ما</div>
+        <div class="menuItems">پروفایل کاربری</div>
+    </div>
+</div>
+
+<div id="information">
+    <div id="detail">
+        <div>
+            <h2 id="titleDetails">جزئیات محصول :</h2>
+            <div class="option">جنس کف : PU</div>
+            <div class="option">جنس رویه : کتان</div>
+            <div class="option">وزن : ۱۷۰ گرم</div>
+            <div class="option">نحوه بسته شدن : بندی</div>
+            <div class="option">ساخت : ایران (تهران)</div>
+            <div class="option">زمان ارسال به سراسر ایران : ٣ تا ۷ روز کاری</div>
+        </div>
+        <div>
+            <h2 id="titleShoes">کفش ارزان اسنیکرز</h2>
+            <div>
+                <div>رنگ :</div>
+                <label>
+                    <select id="selectionColor" class="input selection"></select>
+                </label>
+            </div>
+            <div>
+                <div>سایز :</div>
+                <label>
+                    <select id="selectionSize" class="input selection"></select>
+                </label>
+            </div>
+            <div>
+                <div>قیمت (تومان) :</div>
+                <div id="priceAll"></div>
+            </div>
+            <div>
+                <div>تعداد :</div>
+                <label>
+                    <input type="number" id="input" class="input" value="1">
+                </label>
+            </div>
+            <div>
+                <button id="basket">افزودن به سبد خرید</button>
+                <span id="NO">ناموجود</span>
+            </div>
+        </div>
+    </div>
+    <div id="picture">
+        <img src="./images/linda-women-sneakers-G18-model-banner.png" alt="کفش ارزان اسنیکرز">
+    </div>
+</div>
+
+<div id="modalMain">
+    <div id="modalHeader">
+        <div>
+            <h2 id="modalTitle">سبد خرید شما</h2>
+            <i id="exit" class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+    <div id="modalContent">
+        <div id="modalFooter">
+            <div id="footerStartPrice">
+                <div>: قیمت محصولات</div>
+                <div>
+                    <div>(تومان)</div>
+                    <div id="startPrice">0</div>
+                </div>
+            </div>
+            <div id="footerDiscountPrice">
+                <div>: مجموع تخفیف</div>
+                <div>
+                    <div>(تومان)</div>
+                    <div id="discountPrice">0</div>
+                </div>
+            </div>
+            <div id="footerEndPrice">
+                <div>: قیمت نهایی</div>
+                <div>
+                    <div>(تومان)</div>
+                    <div id="endPrice">0</div>
+                </div>
+            </div>
+            <div id="footerComplete">
+                <button>تکمیل خرید و پرداخت</button>
+            </div>
+        </div>
+        <div id="modalProducts">
+<!--                        <div class="product">-->
+<!--                            <div class="modalInformation">-->
+<!--                                <div class="modalInformationFirst">-->
+<!--                                    <div class="informationNumber">-->
+<!--                                        <div class="informationNumberFirst">: تعداد</div>-->
+<!--                                        <div class="informationNumberLast">-->
+<!--                                            <i class="fa-solid fa-minus"></i>-->
+<!--                                            <i class="fa-solid fa-trash-can"></i>-->
+<!--                                            <span class="informationProductNumber">1</span>-->
+<!--                                            <i class="fa-solid fa-plus"></i>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="informationPrice">-->
+<!--                                        <div class="informationPriceFirst">: قیمت</div>-->
+<!--                                        <div class="informationPriceLast">-->
+<!--                                            <div>(تومان)</div>-->
+<!--                                            <div class="informationProductPrice">1000000</div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="modalInformationLast">-->
+<!--                                    <div class="informationColor">-->
+<!--                                        <div class="tittleColor">: رنگ</div>-->
+<!--                                        <div class="color"></div>-->
+<!--                                    </div>-->
+<!--                                    <div class="informationSize">-->
+<!--                                        <div class="tittleSize">: سایز</div>-->
+<!--                                        <div class="size">37</div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="modalPicture">-->
+<!--                                <img src="./images/linda-women-sneakers-G18-model-banner.png" alt="کفش ارزان اسنیکرز">-->
+<!--                                <div class="productName">کفش ارزان اسنیکرز</div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+        </div>
+    </div>
+</div>
+
+<script src="جزئیات%20کفش.js"></script>
+
+</body>
+
+</html>

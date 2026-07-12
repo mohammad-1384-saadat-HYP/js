@@ -1,0 +1,2172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>جزییات(کفش)</title>
+    <link href="fonts/fontawesome-free-6.7.2-web/css/all.css" rel="stylesheet">
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 25px;
+        }
+
+        #main {
+            width: 100%;
+            display: flex;
+            direction: rtl;
+            justify-content: center;
+            z-index: -1;
+        }
+
+        #svg1 {
+            display: none;
+            cursor: pointer;
+        }
+
+        #menu-items {
+            margin: 40px 0 35px;
+            justify-content: center;
+            display: flex;
+            cursor: pointer;
+        }
+
+        #i1, .cl1 {
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 15px;
+        }
+
+        #i1:hover, .cl1:hover {
+            background-color: #0000ff;
+            color: #ff00ff;
+        }
+
+        #i1 {
+            position: relative;
+            display: flex;
+        }
+
+        #svg2 {
+            fill: #ffffff;
+            margin-left: -10px;
+            margin-top: 10px;
+            margin-right: 35px;
+        }
+
+        #svg3 {
+            display: none;
+        }
+
+        #i1:hover #i3 {
+            display: block;
+        }
+
+        #i3 {
+            display: none;
+            position: absolute;
+            background-color: #000000;
+            color: #FFFFFF;
+            margin-top: 59px;
+            width: 120%;
+            right: 0;
+        }
+
+        #id1, .cl2 {
+            display: block;
+            line-height: 60px;
+            padding: 4px 15px 4px 0;
+        }
+
+        #id1:hover, .cl2:hover {
+            background-color: #0000ff;
+            color: #ff00ff;
+        }
+
+        #id1 {
+            position: relative;
+            display: flex;
+            width: 93%;
+        }
+
+        #svg4 {
+            fill: #ffffff;
+            margin-right: 115px;
+            margin-top: 20px;
+        }
+
+        #id1:hover #id3 {
+            display: block;
+        }
+
+        #id3 {
+            display: none;
+            position: absolute;
+            background-color: #000000;
+            color: #FFFFFF;
+            margin-right: 193px;
+            width: 100%;
+            margin-top: -5px;
+        }
+
+        .cl3 {
+            display: block;
+            line-height: 60px;
+            padding: 4px 15px 4px 0;
+        }
+
+        .cl3:hover {
+            background-color: #0000ff;
+            color: #ff00ff;
+        }
+
+        #back {
+            padding-right: 18px;
+            direction: rtl;
+            display: flex;
+        }
+
+        .back {
+            cursor: pointer;
+        }
+
+        .chevron-left {
+            margin-top: 1vh;
+            margin-right: 10px;
+            margin-left: 10px;
+            width: 20px;
+            height: 20px;
+        }
+
+        #information {
+            margin-top: 3vh;
+            display: flex;
+            direction: rtl;
+            width: 100%;
+            justify-content: center;
+        }
+
+        #i-center, #i-left {
+            width: 24%;
+        }
+
+        #i-right {
+            cursor: default;
+            width: 49%;
+        }
+
+        #i-center {
+            font-size: 35px;
+            padding-right: 20px;
+        }
+
+        #name {
+            cursor: default;
+            margin-bottom: 40px;
+        }
+
+        #form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+
+        #price, #number {
+            cursor: default;
+        }
+
+        #output1 {
+            cursor: default;
+            margin-bottom: 25px;
+        }
+
+        #input1 {
+            width: 200px;
+            font-size: 47px;
+            cursor: default;
+            border-radius: 10px;
+            margin-top: 5px;
+            padding: 3px;
+        }
+
+        #options {
+            margin-bottom: 40px;
+        }
+
+        #up {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #down {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #op-output1, #option1, #op-output2 {
+            margin-bottom: 20px;
+        }
+
+        #option1, #option2 {
+            font-size: 40px;
+            border-radius: 10px;
+            cursor: pointer;
+            padding: 3px;
+        }
+
+        #op-output1, #op-output2 {
+            cursor: default;
+        }
+
+        .access {
+            margin-bottom: 40px;
+            cursor: default;
+        }
+
+        .OK {
+            color: #0b8e00;
+        }
+
+        .NO {
+            display: none;
+            color: #ff0000;
+        }
+
+        #basket1 {
+            font-size: 35px;
+            background-color: #0000ff;
+            color: #ffffff;
+            border: 5px;
+            border-radius: 15px;
+            height: 50px;
+            font-weight: 600;
+            padding: 6px;
+        }
+
+        /*#basket1:hover {*/
+        /*    color: #ff0000;*/
+        /*}*/
+
+        /*#basket1:active {*/
+        /*    color: black;*/
+        /*}*/
+
+        #extra {
+            margin-bottom: 10px;
+            cursor: default;
+        }
+
+        .option {
+            margin-top: 10px;
+            opacity: 0.65;
+            cursor: default;
+        }
+
+        #more {
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        #more1 {
+            margin: 20px 20px 0 20px;
+            background-color: rgba(0, 0, 0, 0.55);
+            cursor: default;
+            text-align: center;
+        }
+
+        #more2 {
+            margin: 0 20px 20px 20px;
+            padding-top: 20px;
+            border-right: 3px dashed #9f9f9f;
+            border-left: 3px dashed #696969;
+            display: flex;
+            justify-content: center;
+            cursor: default;
+        }
+
+        .more {
+            width: 25%;
+            padding: 0 10px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .align1, .align2 {
+            text-align: center;
+        }
+
+        .align2 {
+            margin-top: 10px;
+        }
+
+        #more3 {
+            margin: 0 20px 10px 20px;
+            padding-top: 20px;
+            border-right: 3px dashed #9f9f9f;
+            border-left: 3px dashed #696969;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: default;
+        }
+
+        .more2 {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .more3 {
+            width: 50%;
+            padding: 0 10px;
+        }
+
+        #offer {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            cursor: default;
+        }
+
+        #agree {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+        }
+
+        .label, #label {
+            color: #0b6900;
+        }
+
+        .label2 {
+            color: #0b6900;
+            font-size: 23px;
+        }
+
+        .agree {
+            width: 90%;
+            font-size: 30px;
+            cursor: text;
+        }
+
+        #email {
+            margin-top: 20px;
+            color: #0b6900;
+            font-family: IRANSans, serif;
+            font-size: 25px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        #text {
+            width: 45%;
+        }
+
+        fieldset, #agree {
+            direction: rtl;
+        }
+
+        #legend {
+            color: #0b6900;
+        }
+
+        #area {
+            width: 99%;
+            height: 15vh;
+            font-size: 30px;
+        }
+
+        #footer {
+            background-color: rgba(124, 124, 124, 0.8);
+            margin-top: 20px;
+            display: flex;
+            font-family: IRANSans, serif;
+            cursor: default;
+            justify-content: center;
+        }
+
+        #left {
+            direction: rtl;
+            margin: 20px 0 20px 0;
+            width: 400px;
+        }
+
+        #right {
+            direction: rtl;
+            margin: 20px 0 20px 200px;
+        }
+
+        .l-up {
+            display: flex;
+            direction: ltr;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+
+        .r-up {
+            display: flex;
+            direction: ltr;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+
+        #l-up1 {
+            background-color: #eaefef;
+            width: 75px;
+            height: 0.25vw;
+            margin-top: 1vw;
+            margin-right: 1vw;;
+        }
+
+        #l-up2 {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #r-up1 {
+            width: 10px;
+            margin-right: 5px;
+            fill: #eaefef;
+        }
+
+        #r-up2 {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #r-up3 {
+            width: 10px;
+            margin-left: 5px;
+            fill: #eaefef;
+        }
+
+        .r-down {
+            font-size: 15px;
+            border-style: solid;
+            border-bottom-width: 0.1vh;
+            border-top-width: 0;
+            border-right-width: 0;
+            border-left-width: 0;
+            padding: 10px;
+            border-color: #eaefef;
+        }
+
+        #r-down1 {
+            margin-bottom: 3px;
+        }
+
+        #l-down {
+            display: flex;
+            font-size: 15px;
+            width: 100%;
+        }
+
+        .down {
+            width: 50%;
+        }
+
+        .d-down-r, .d-down-l {
+            border-style: solid;
+            border-bottom-width: 0.1vh;
+            border-top-width: 0;
+            border-right-width: 0;
+            border-left-width: 0;
+            padding: 10px 5px;
+            border-color: #eaefef;
+            cursor: pointer;
+        }
+
+        .d-down-r {
+            margin-left: 3px;
+        }
+
+        .d-down-l {
+            margin-right: 3px;
+        }
+
+        #modalMain {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            cursor: default;
+        }
+
+        #modalContent {
+            margin: 10% auto;
+            width: 50%;
+            height: 65%;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 5px;
+            cursor: default;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .upStage {
+            display: flex;
+            width: 100%;
+            height: 60%;
+        }
+
+        .imgHolder {
+            width: 40%;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .imgHolder img {
+            height: 66.6%;
+            width: auto;
+            border-radius: 20px;
+        }
+
+        .imgHolder div {
+            height: 33.3%;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .imgHolder div button {
+            height: 32%;
+            font-size: 30px;
+            font-weight: bold;
+            border-radius: 30px;
+            color: #ffffff;
+            background: linear-gradient(to bottom left, #6a00b9, #ff00ff);
+            border-color: rgba(0, 0, 0, 0.35);
+        }
+
+        .multiDiv {
+            width: 60%;
+            padding: 5px;
+        }
+
+        .multiDivHolders {
+            width: 100%;
+            height: 33.3%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+        }
+
+        .between {
+            border-top: 1px dashed;
+            border-bottom: 1px dashed;
+        }
+
+        h2 {
+            margin: 0;
+        }
+
+        .numberDetails {
+            display: flex;
+            width: 40%;
+            height: 45%;
+            border: 1px solid;
+            border-collapse: collapse;
+            border-radius: 50px;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .fa-minus, .fa-plus {
+            cursor: pointer;
+        }
+
+        .numberHolder {
+            border: 1px dashed;
+            height: 100%;
+            align-items: center;
+            display: flex;
+            padding: 0 30px;
+        }
+
+        .pricesKeeper {
+            font-size: 30px;
+        }
+
+        .priceHolder {
+            margin: 0 15px;
+        }
+
+        .data {
+            width: 100%;
+            height: 40%;
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+            display: flex;
+        }
+
+        .description {
+            border-right: 1px solid;
+            padding: 10px;
+            width: 60.5%;
+        }
+
+        .descriptionTittle {
+            margin: 5px 0;
+            height: 22.5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .descriptionContent {
+            text-align: center;
+            height: 70%;
+            padding-top: 5px;
+            border-top: 1px dotted;
+            overflow: auto;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .abilities {
+            width: 39.5%;
+            padding: 10px;
+        }
+
+        .abilityPart {
+            height: 50%;
+            text-align: center;
+        }
+
+        .abilityPart h3 {
+            margin: 0;
+            height: 40%;
+            font-weight: normal;
+        }
+
+        .sizePlace {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60%;
+            font-size: 32px;
+        }
+
+        .abilityPart h2 {
+            height: 60%;
+        }
+
+        .abilityPart h3, .abilityPart h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .colorPlaceHolder {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60%;
+        }
+
+        .colorPlace {
+            width: 50px;
+            height: 50px;
+            border: 2px solid;
+            border-radius: 50%;
+            /*background: linear-gradient(270deg, #ffffff, #ffffff);*/
+        }
+
+        #payment {
+            display: flex;
+            height: 40%;
+        }
+
+        #payment > div {
+            padding: 5px;
+        }
+
+        #confirm {
+            width: 30%;
+            border-right: 1px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #confirm button {
+            font-size: 24px;
+            height: 16%;
+            border-radius: 23px;
+            border-color: rgba(0, 0, 0, 0.5);
+            background: linear-gradient(145deg, #6a00b9, #FF00FF, #6a00b9);
+            cursor: pointer;
+            transition: box-shadow 0.01s ease-in, transform 0.01s ease-in;
+            box-shadow: 2px -4px 5px rgba(0, 0, 0, 0.6);
+            padding: 10px 15px;
+        }
+
+        #confirm button:active {
+            background: linear-gradient(145deg, rgba(81, 0, 155, 0.95), rgba(250, 0, 250, 0.95), rgba(81, 0, 155, 0.95));
+            transform: scale(98%);
+            box-shadow: inset 3px -5px 5px rgba(0, 0, 0, 0.45);
+        }
+
+        #table {
+            width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            font-size: 20px;
+            width: 100%;
+            height: 75%;
+            overflow: auto;
+            box-sizing: border-box;
+        }
+
+        tr {
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid;
+            text-align: center;
+        }
+
+        th {
+            width: 25%;
+        }
+
+        th:nth-last-child(1) {
+            width: 35%;
+        }
+
+        th:nth-last-child(2) {
+            width: 15%;
+        }
+
+        .tablePrice {
+            display: flex;
+            justify-content: center;
+        }
+
+        .tablePrice > div {
+            width: 50%;
+            font-size: 15px;
+        }
+
+        .tablePrice div:first-child {
+            width: 40%;
+        }
+
+        #tablePrice {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        table thead tr th {
+            border-top: none;
+        }
+
+        tr th:last-child, tr td:last-child {
+            border-right: none;
+        }
+
+        tr th:first-child, tr td:first-child {
+            border-left: none;
+        }
+
+        table tfoot tr td {
+            border-bottom: none;
+        }
+
+        table thead {
+            height: 25%;
+        }
+
+        table tbody {
+            height: 35%;
+        }
+
+        table tfoot {
+            height: 25%;
+        }
+
+        @media screen and (max-width: 1800px) {
+            .chevron-left {
+                margin-top: 1.3vh;
+            }
+
+            #i-center, #i-left {
+                width: 22%;
+            }
+
+            #i-right {
+                width: 52%;
+            }
+        }
+
+        @media screen and (max-width: 1700px) {
+            #i-center, #i-left {
+                width: 20%;
+            }
+
+            #i-right {
+                width: 56%;
+            }
+        }
+
+        @media screen and (max-width: 1550px) {
+            .chevron-left {
+                margin-top: 1.1vh;
+            }
+
+            #i-center {
+                font-size: 32px;
+            }
+
+            #input1 {
+                font-size: 40px;
+            }
+
+            #i-left {
+                font-size: 22px;
+            }
+        }
+
+        @media screen and (max-width: 1500px) {
+            #back {
+                font-size: 23px;
+            }
+
+            #i-center, #option1, #option2 {
+                font-size: 30px;
+            }
+
+            #input1 {
+                font-size: 33px;
+                width: 175px;
+            }
+
+            #basket1 {
+                font-size: 30px;
+            }
+
+            #extra, .option {
+                font-size: 21px;
+            }
+
+            .label, #label, #legend {
+                font-size: 23px;
+            }
+        }
+
+        @media screen and (max-width: 1400px) {
+            .align1, .align2 {
+                font-size: 24px;
+            }
+
+            .label, #label {
+                font-size: 21px;
+            }
+
+            #area {
+                height: 11vh;
+            }
+        }
+
+        @media screen and (max-width: 1350px) {
+            #back {
+                font-size: 21px;
+                padding-right: 17px;
+            }
+
+            .chevron-left {
+                margin-top: 1vh;
+                width: 15px;
+                height: 15px;
+            }
+
+            #i-right {
+                width: 60%;
+            }
+
+            #i-center {
+                width: 20%;
+            }
+
+            #i-left {
+                width: 16%;
+            }
+
+            #i-center, #option1, #option2 {
+                font-size: 28px;
+            }
+
+            #input1 {
+                font-size: 30px;
+            }
+
+            #extra, .option {
+                font-size: 20px;
+            }
+        }
+
+        @media screen and (max-width: 1250px) {
+            #i-right {
+                width: 65%;
+            }
+
+            #i-center {
+                width: 19%;
+                padding-right: 10px;
+            }
+
+            #i-left {
+                width: 13%;
+            }
+
+            #input1 {
+                width: 90%;
+            }
+
+            #basket1 {
+                height: 75px;
+            }
+
+            #l-up1 {
+                margin-top: 15px;
+            }
+        }
+
+        @media screen and (min-width: 1201px) {
+            #information2, #more3, .label2 {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            #back {
+                padding-right: 20px;
+                font-size: 24px;
+            }
+
+            .chevron-left {
+                margin-top: 1vh;
+                width: 18px;
+                height: 18px;
+            }
+
+            #i-right {
+                width: 70%;
+            }
+
+            #i-center, #i-left {
+                display: none;
+            }
+
+            #information2 {
+                margin: 20px;
+                padding: 25px 0;
+                direction: rtl;
+                border-top: 5px solid;
+                border-bottom: 5px solid;
+            }
+
+            #name2 {
+                font-size: 33px;
+                margin-bottom: 25px;
+                cursor: default;
+            }
+
+            #details {
+                display: flex;
+                border-top: 4px dotted;
+                border-bottom: 4px dotted;
+                padding: 15px 0;
+            }
+
+            #input2, #option12, #option22 {
+                font-size: 24px;
+                border-radius: 10px;
+                padding: 3px;
+            }
+
+            #input2, #extra-details {
+                cursor: default;
+            }
+
+            #option12, #option22 {
+                cursor: pointer;
+            }
+
+            #form2, #i2-center, #basket2 {
+                cursor: default;
+            }
+
+            #form2 {
+                width: 30%;
+            }
+
+            #price2, #number2, #op-output12, #op-output22 {
+                height: 88px;
+                line-height: 90px;
+            }
+
+            #i2-center {
+                width: 40%;
+            }
+
+            #keeper {
+                width: 30%;
+                text-align: center;
+            }
+
+            #extra-details {
+                margin-top: 15px;
+            }
+
+            .option2 {
+                opacity: 0.65;
+            }
+
+            .access {
+                margin-bottom: 28px;
+                margin-top: 15px;
+            }
+
+            #basket2 {
+                font-size: 32px;
+                background-color: #0000ff;
+                color: #ffffff;
+                border: 5px;
+                border-radius: 15px;
+                cursor: pointer;
+                height: 75px;
+                margin-top: 0;
+                font-weight: 600;
+            }
+
+            #basket2:hover {
+                color: #ff0000;
+            }
+
+            #basket2:active {
+                color: black;
+            }
+
+            #extra-details {
+                font-size: 21px;
+            }
+
+            #more2 {
+                display: none;
+            }
+
+            .label {
+                display: none;
+            }
+
+            #area {
+                height: 12vh;
+            }
+        }
+
+        @media screen and (max-width: 1100px) {
+            #left {
+                width: 300px;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            #name2 {
+                font-size: 30px;
+            }
+
+            #details, #input2, #option12, #option22 {
+                font-size: 23px;
+            }
+
+            #basket2 {
+                font-size: 27px;
+            }
+
+            #extra-details {
+                font-size: 19px;
+            }
+
+            #legend {
+                font-size: 20px;
+            }
+
+            #left {
+                width: 200px;
+            }
+        }
+
+        @media screen and (max-width: 940px) {
+            #i2-center {
+                width: 45%;
+            }
+
+            #keeper {
+                width: 25%;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            #main {
+                justify-content: flex-start;
+                background-color: #bdbdbd;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            #svg1 {
+                display: block;
+                padding: 7px 10px 7px 0;
+                width: 31px;
+            }
+
+            #svg1:hover #menu-items {
+                display: block;
+            }
+
+            #menu-items {
+                font-size: 25px;
+                display: none;
+                flex-direction: column;
+                margin: -50px 0 0;
+                width: 215px;
+            }
+
+            #svg2 {
+                display: none;
+            }
+
+            #svg3 {
+                display: block;
+                fill: #ffffff;
+                margin-left: -10px;
+                margin-top: 10px;
+                margin-right: 78px;
+            }
+
+            #i3 {
+                margin-top: -15px;
+                margin-right: 215px;
+                width: 88%;
+            }
+
+            #svg4 {
+                margin-right: 95px;
+                margin-top: 20px;
+            }
+
+            #id1 {
+                width: 92%;
+            }
+
+            #id3 {
+                margin-right: 175px;
+                margin-top: -3px;
+                width: 100%;
+            }
+
+            #back {
+                font-size: 22px;
+            }
+
+            .chevron-left {
+                margin-top: 0.9vh;
+            }
+
+            .label2 {
+                font-size: 20px;
+            }
+
+            .agree, #area {
+                font-size: 28px;
+            }
+
+            #email {
+                font-size: 20px;
+            }
+
+            #text {
+                width: 50%;
+            }
+
+            #right {
+                margin-left: 100px;
+            }
+        }
+
+        @media screen and (min-width: 851px) {
+            #up3, #down3 {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 850px) {
+            #information2 {
+                padding-bottom: 0;
+            }
+
+            #details {
+                flex-direction: column;
+                padding: 0;
+                border: none;
+            }
+
+            #form2, #up3, #down3, #keeper, #extra-details {
+                width: 100%;
+                border-top: 4px dotted;
+                padding: 15px 0;
+            }
+
+            #price2, #number2 {
+                height: 48px;
+                line-height: normal;
+            }
+
+            #up2, #down2 {
+                display: none;
+            }
+
+            #up3, #down3 {
+                display: block;
+                cursor: default;
+            }
+
+            .bottom {
+                margin-bottom: 10px;
+            }
+
+            #option13, #option23 {
+                font-size: 25px;
+                border-radius: 10px;
+                cursor: pointer;
+                padding: 3px;
+            }
+
+            #keeper {
+                text-align: right;
+            }
+
+            .access {
+                margin-bottom: 15px;
+                margin-top: 0;
+            }
+
+            #basket2 {
+                margin-top: 0;
+            }
+
+            #extra-details {
+                margin-top: 0;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            #agree {
+                width: 28%;
+            }
+
+            #text {
+                width: 60%;
+            }
+
+            #footer {
+                display: block;
+                margin-top: -12px;
+            }
+
+            #l-down {
+                justify-content: center;
+            }
+
+            .down {
+                width: 25%;
+            }
+
+            #left {
+                width: 100%;
+            }
+
+            #right {
+                margin-left: 0;
+            }
+
+            .r-down {
+                padding: 20px 10px 20px 0;
+            }
+
+            #r-down1 {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .align1, .align2 {
+                font-size: 22px;
+            }
+
+            #offer {
+                flex-direction: column;
+            }
+
+            #agree {
+                width: 90%;
+                flex-direction: row;
+                margin-left: 30px;
+                margin-right: 0;
+            }
+
+            #text {
+                width: 90%;
+                margin-left: 30px;
+            }
+
+            #email {
+                margin-top: 33px;
+            }
+        }
+
+        @media screen and (max-width: 650px) {
+            #back {
+                font-size: 19px;
+            }
+
+            .chevron-left {
+                margin-top: 0.6vh;
+            }
+
+            #down2 {
+                text-align: left;
+                width: 20%;
+            }
+        }
+
+        @media screen and (max-width: 635px) {
+            #id3 {
+                margin-right: -206px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            #i-right {
+                width: 80%;
+            }
+
+            #offer {
+                margin-left: -5px;
+            }
+        }
+
+        @media screen and (min-width: 551px) {
+            #more4 {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            #back {
+                font-size: 17px;
+            }
+
+            .chevron-left {
+                margin-top: 0.6vh;
+                width: 15px;
+                height: 15px;
+            }
+
+            #more {
+                margin-top: 20px;
+            }
+
+            #more3 {
+                display: none;
+            }
+
+            #more4 {
+                margin: 0 20px 10px 20px;
+                padding-top: 20px;
+                border-right: 3px dashed #9f9f9f;
+                border-left: 3px dashed #696969;
+                display: flex;
+                flex-direction: column;
+                cursor: default;
+            }
+
+            .more4 {
+                width: 96%;
+                padding: 0 10px 10px;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            #offer {
+                margin-left: -10px;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            #offer {
+                margin-left: -20px;
+            }
+
+            .label2 {
+                font-size: 15px;
+            }
+
+            #email {
+                margin-top: 28px;
+                font-size: 15px;
+            }
+
+            #legend {
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (max-width: 350px) {
+            #offer {
+                margin-left: -25px;
+            }
+
+            .label2 {
+                font-size: 13px;
+            }
+
+            #legend {
+                font-size: 13px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div id="main">
+    <svg id="svg1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+    </svg>
+    <div id="menu-items">
+        <div class="cl1">صفحه اصلی</div>
+        <div id="i1">
+            <div id="i2">محصولات</div>
+            <svg id="svg2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="20" height="20">
+                <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/>
+            </svg>
+            <svg id="svg3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" width="20" height="20">
+                <path d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"/>
+            </svg>
+            <div id="i3">
+                <div id="id1">
+                    <div id="id2">کفش</div>
+                    <svg id="svg4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" width="20" height="20">
+                        <path d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"/>
+                    </svg>
+                    <div id="id3">
+                        <div class="cl3">پیاده روی</div>
+                        <div class="cl3">تخت</div>
+                        <div class="cl3">پاشنه دار</div>
+                        <div class="cl3">باشگاهی</div>
+                    </div>
+                </div>
+                <div class="cl2">صندل</div>
+                <div class="cl2">دمپایی</div>
+                <div class="cl2">کفش مشکی</div>
+            </div>
+        </div>
+        <div class="cl1">مقالات</div>
+        <div class="cl1">درباره ما</div>
+        <div class="cl1">تماس با ما</div>
+        <div class="cl1">پروفایل کاربری</div>
+    </div>
+</div>
+
+<div id="back">
+    <div class="back">کفش</div>
+    <svg class="chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+    </svg>
+    <div id="b-1" class="back">محصولات</div>
+    <svg id="b-2" class="chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/>
+    </svg>
+    <div id="b-3" class="back">کفش ارزان اسنیکرز</div>
+</div>
+
+<div id="information">
+    <img id="i-right" src="./images/linda-women-sneakers-G18-model-banner.png" alt="sneakers">
+    <div id="i-center">
+        <div id="name">کفش ارزان اسنیکرز</div>
+        <form id="form">
+            <div id="price">قیمت(تومان):</div>
+            <output id="output1" name="price" for="input">200000</output>
+            <div id="number">تعداد:</div>
+            <label><input type="number" id="input1" value="1" max="5" min="1"></label>
+        </form>
+        <div id="options">
+            <form id="up">
+                <output id="op-output1" name="color">رنگ: کرمی-قهوه ای</output>
+                <label><select id="option1">
+                    <option>کرمی-قهوه ای</option>
+                    <option>مشکی-قهوه ای</option>
+                    <option>سفید-قهوه ای</option>
+                </select></label>
+            </form>
+            <form id="down">
+                <output id="op-output2" name="size">سایز: 37</output>
+                <label><select id="option2">
+                    <option>37</option>
+                    <option>38</option>
+                    <option>39</option>
+                    <option>40</option>
+                    <option>41</option>
+                    <option>42</option>
+                </select></label>
+            </form>
+        </div>
+        <div class="access">
+            <span class="OK">موجود</span>
+            <span class="NO">ناموجود</span>
+        </div>
+        <button id="basket1">افزودن به سبد خرید</button>
+    </div>
+    <div id="i-left">
+        <span id="extra">جزئیات محصول :</span>
+        <div class="option">جنس کف:PU</div>
+        <div class="option">جنس رویه:کتان</div>
+        <div class="option">وزن: ۱۷۰گرم</div>
+        <div class="option">نحوه بسته شدن: بندی</div>
+        <div class="option">ساخت:ایران(تهران)</div>
+        <div class="option">زمان ارسال به سراسر ایران:٣تا۷ روز کاری</div>
+    </div>
+</div>
+
+<div id="information2">
+    <div id="name2">کفش ارزان اسنیکرز</div>
+    <div id="details">
+        <form id="form2">
+            <div id="price2">قیمت(تومان):
+                <output id="output2" name="price2" for="input2">200000</output>
+            </div>
+            <div id="number2">تعداد:
+                <label><input type="number" id="input2" value="1" max="5" min="1"></label>
+            </div>
+        </form>
+        <div id="i2-center">
+            <form id="up2">
+                <div>
+                    <output id="op-output12" name="color2">رنگ: کرمی-قهوه ای</output>
+                    <label><select id="option12">
+                        <option>کرمی-قهوه ای</option>
+                        <option>مشکی-قهوه ای</option>
+                        <option>سفید-قهوه ای</option>
+                    </select></label>
+                </div>
+            </form>
+            <form id="down2">
+                <div>
+                    <output id="op-output22" name="size2">سایز: 37</output>
+                    <label><select id="option22">
+                        <option>37</option>
+                        <option>38</option>
+                        <option>39</option>
+                        <option>40</option>
+                        <option>41</option>
+                        <option>42</option>
+                    </select></label>
+                </div>
+            </form>
+        </div>
+        <form id="up3">
+            <div class="bottom">
+                <output id="op-output13" name="color3">رنگ: کرمی-قهوه ای</output>
+            </div>
+            <label><select id="option13">
+                <option>کرمی-قهوه ای</option>
+                <option>مشکی-قهوه ای</option>
+                <option>سفید-قهوه ای</option>
+            </select></label>
+        </form>
+        <form id="down3">
+            <div class="bottom">
+                <output id="op-output23" name="size3">سایز: 37</output>
+            </div>
+            <label><select id="option23">
+                <option>37</option>
+                <option>38</option>
+                <option>39</option>
+                <option>40</option>
+                <option>41</option>
+                <option>42</option>
+            </select></label>
+        </form>
+        <div id="keeper">
+            <div class="access">
+                <span class="OK">موجود</span>
+                <span class="NO">ناموجود</span>
+            </div>
+            <button id="basket2">افزودن به سبد خرید</button>
+        </div>
+    </div>
+    <div id="extra-details">
+        <span id="extra2">جزئیات محصول :</span>
+        <div class="option2">جنس کف:PU</div>
+        <div class="option2">جنس رویه:کتان</div>
+        <div class="option2">وزن: ۱۷۰گرم</div>
+        <div class="option2">نحوه بسته شدن: بندی</div>
+        <div class="option2">ساخت:ایران(تهران)</div>
+        <div class="option2">زمان ارسال به سراسر ایران:٣تا۷ روز کاری</div>
+    </div>
+</div>
+
+<div id="more">
+    <div id="more1">محصولات مشابه</div>
+    <div id="more2">
+        <div class="more">
+            <a><img src="./images/linda-women-sneakers-G18-model-banner.png" alt="sneakers"></a>
+            <a>
+                <div class="align1">کفش ارزان اسنیکرز</div>
+            </a>
+            <div class="align2">فقط 200000 تومان</div>
+        </div>
+        <div class="more">
+            <a><img src="./images/linda-women-sneakers-G18-model-banner.png" alt="sneakers"></a>
+            <a>
+                <div class="align1">کفش ارزان اسنیکرز</div>
+            </a>
+            <div class="align2">فقط 200000 تومان</div>
+        </div>
+        <div class="more">
+            <a><img src="./images/linda-women-sneakers-G18-model-banner.png" alt="sneakers"></a>
+            <a>
+                <div class="align1">کفش ارزان اسنیکرز</div>
+            </a>
+            <div class="align2">فقط 200000 تومان</div>
+        </div>
+        <div class="more">
+            <a><img src="./images/linda-women-sneakers-G18-model-banner.png" alt="sneakers"></a>
+            <a>
+                <div class="align1">کفش ارزان اسنیکرز</div>
+            </a>
+            <div class="align2">فقط 200000 تومان</div>
+        </div>
+    </div>
+    <div id="more3">
+        <div class="more2">
+            <div class="more3">
+                <a><img src="./images/linda-women-sneakers-G18-model-banner.png" alt="sneakers"></a>
+                <a>
+                    <div class="align1">کفش ارزان اسنیکرز</div>
+                </a>
+                <div class="align2">فقط 200000 تومان</div>
+            </div>
+            <div class="more3">
+                <a><img src="./images/linda-women-sneakers-G18-model-banner.png" alt="sneakers"></a>
+                <a>
+                    <div class="align1">کفش ارزان اسنیکرز</div>
+                </a>
+                <div class="align2">فقط 200000 تومان</div>
+            </div>
+        </div>
+        <div class="more2">
+            <div class="more3">
+                <a><img src="./images/linda-women-sneakers-G18-model-banner.png" alt="sneakers"></a>
+                <a>
+                    <div class="align1">کفش ارزان اسنیکرز</div>
+                </a>
+                <div class="align2">فقط 200000 تومان</div>
+            </div>
+            <div class="more3">
+                <a><img src="./images/linda-women-sneakers-G18-model-banner.png" alt="sneakers"></a>
+                <a>
+                    <div class="align1">کفش ارزان اسنیکرز</div>
+                </a>
+                <div class="align2">فقط 200000 تومان</div>
+            </div>
+        </div>
+    </div>
+    <div id="more4">
+        <div class="more4">
+            <a><img src="./images/linda-women-sneakers-G18-model-banner.png" alt="sneakers"></a>
+            <a>
+                <div class="align1">کفش ارزان اسنیکرز</div>
+            </a>
+            <div class="align2">فقط 200000 تومان</div>
+        </div>
+        <div class="more4">
+            <a><img src="./images/linda-women-sneakers-G18-model-banner.png" alt="sneakers"></a>
+            <a>
+                <div class="align1">کفش ارزان اسنیکرز</div>
+            </a>
+            <div class="align2">فقط 200000 تومان</div>
+        </div>
+        <div class="more4">
+            <a><img src="./images/linda-women-sneakers-G18-model-banner.png" alt="sneakers"></a>
+            <a>
+                <div class="align1">کفش ارزان اسنیکرز</div>
+            </a>
+            <div class="align2">فقط 200000 تومان</div>
+        </div>
+        <div class="more4">
+            <a><img src="./images/linda-women-sneakers-G18-model-banner.png" alt="sneakers"></a>
+            <a>
+                <div class="align1">کفش ارزان اسنیکرز</div>
+            </a>
+            <div class="align2">فقط 200000 تومان</div>
+        </div>
+    </div>
+</div>
+
+<div id="offer">
+    <div id="agree">
+        <label class="label">نام و نام خانودگی خود را وارد کنید:
+            <input type="text" class="agree">
+        </label>
+        <label class="label2">نام و نام خانوادگی:
+            <input type="text" class="agree">
+        </label>
+        <label class="label">ایمیل خود را وارد کنید:
+            <input type="email" class="agree">
+        </label>
+        <label class="label2">ایمیل:
+            <input type="text" class="agree">
+        </label>
+        <label id="label">
+            <input type="submit" value="ارسال" id="email">
+        </label>
+    </div>
+    <div id="text">
+        <form>
+            <fieldset>
+                <legend id="legend">پیشنهاد ، نظرات و انتقادات شما عزیزان:</legend>
+                <label>
+                    <textarea id="area"></textarea>
+                </label>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<div id="footer">
+    <div id="left">
+        <div class="l-up">
+            <div id="l-up1"></div>
+            <div id="l-up2">دسترسی سریع</div>
+        </div>
+        <div id="l-down">
+            <div class="down">
+                <div class="d-down-r">فروشگاه</div>
+                <div class="d-down-r">درباره ما</div>
+                <div class="d-down-r">تماس با ما</div>
+            </div>
+            <div class="down">
+                <div class="d-down-l">صفحه اصلی</div>
+                <div id="basketModal" class="d-down-l">سبد خرید شما</div>
+                <div class="d-down-l">پروفایل کاربری</div>
+            </div>
+        </div>
+    </div>
+    <div id="right">
+        <div class="r-up">
+            <svg id="r-up1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/>
+            </svg>
+            <div id="r-up2">اطلاعات تماس</div>
+            <svg id="r-up3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M347.1 24.6c7.7-18.6 28-28.5 47.4-23.2l88 24C499.9 30.2 512 46 512 64c0 247.4-200.6 448-448 448c-18 0-33.8-12.1-38.6-29.5l-24-88c-5.3-19.4 4.6-39.7 23.2-47.4l96-40c16.3-6.8 35.2-2.1 46.3 11.6L207.3 368c70.4-33.3 127.4-90.3 160.7-160.7L318.7 167c-13.7-11.2-18.4-30-11.6-46.3l40-96z"/>
+            </svg>
+        </div>
+        <div class="r-down">نشانی:اصفهان،نقش جهان،کوچه تلفنخانه،خیابان سپاه،پلاک: 67،طبقه: همکف</div>
+        <div class="r-down">
+            <div id="r-down1">دفتر مرکزی: 03132226971</div>
+            <div id="r-down2">پشتیبانی: 09102276945</div>
+        </div>
+        <div class="r-down">ساعت کاری:6:30 الی 17</div>
+        <div class="r-down">ایمیل:hypnightmare1384@gmail.com</div>
+    </div>
+</div>
+
+<div id="modalMain" style="display: block">
+    <div id="modalContent">
+        <div class="upStage">
+            <div class="multiDiv">
+                <div class="multiDivHolders">
+                    <h2 class="tittleHolder"></h2>
+                </div>
+                <div class="between multiDivHolders">
+                    <div class="numberDetails">
+                        <div><i class="fa-solid fa-minus"></i></div>
+                        <div class="numberHolder"></div>
+                        <div><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                </div>
+                <div class="pricesKeeper multiDivHolders">
+                    <div>تومان</div>
+                    <div class="priceHolder"></div>
+                    <div>: قیمت</div>
+                </div>
+            </div>
+            <div class="imgHolder">
+                <img>
+            </div>
+        </div>
+        <div class="data">
+            <div class="description">
+                <h2 class="descriptionTittle">جزئیات محصول</h2>
+                <div class="descriptionContent"></div>
+            </div>
+            <div class="abilities">
+                <div class="colorAbility abilityPart">
+                    <h3>رنگ</h3>
+                    <div class="colorPlaceHolder">
+                        <div class="colorPlace"></div>
+                    </div>
+                </div>
+                <div class="sizeAbility abilityPart">
+                    <h3>سایز</h3>
+                    <h2 class="sizePlace"></h2>
+                </div>
+            </div>
+        </div>
+        <div id="payment">
+            <div id="confirm">
+                <button>تکمیل خرید و پرداخت</button>
+            </div>
+            <div id="table">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>قیمت کل</th>
+                        <th>قیمت تکی</th>
+                        <th>تعداد</th>
+                        <th>عنوان</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="tablePrice">
+                                <div>(تومان)</div>
+                                <div class="tablePriceAll"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="tablePrice">
+                                <div>(تومان)</div>
+                                <div class="tablePriceOne"></div>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="2">
+                            <div id="tablePrice">
+                                <div>(تومان)</div>
+                                <div id="tablePriceAllProducts"></div>
+                            </div>
+                        </td>
+                        <td colspan="2">قیمت همه محصولات</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    //گرفتن ویژگی های عناصری که والد اطلاعات کفش هستن
+    const display1 = window.getComputedStyle(document.getElementById('i-center')).display;
+    const display2 = window.getComputedStyle(document.getElementById('information2')).display;
+    const display31 = window.getComputedStyle(document.getElementById('up3')).display;
+    const display32 = window.getComputedStyle(document.getElementById('down3')).display;
+    const display4 = window.getComputedStyle(document.getElementById('i-left')).display;
+    //گرفتن اطلاعات کفش در عرض های مختلف
+    //گرفتن تعداد
+    const numbersShoes1 = document.getElementById('input1');
+    const numbersShoes2 = document.getElementById('input2');
+    //گرفتن قیمت نهایی
+    const priceShoes1 = document.getElementById('output1');
+    const priceShoes2 = document.getElementById('output2');
+    //گرفتن رنگ
+    const colorShoes1 = document.getElementById('option1');
+    const colorShoes2 = document.getElementById('option12');
+    const colorShoes3 = document.getElementById('option13');
+    //گرفتن جای رنگ
+    const colorShoesPlace1 = document.getElementById('op-output1');
+    const colorShoesPlace2 = document.getElementById('op-output12');
+    const colorShoesPlace3 = document.getElementById('op-output13');
+    //گرفتن سایز
+    const sizeShoes1 = document.getElementById('option2');
+    const sizeShoes2 = document.getElementById('option22');
+    const sizeShoes3 = document.getElementById('option23');
+    //گرفتن جای سایز
+    const sizeShoesPlace1 = document.getElementById('op-output2');
+    const sizeShoesPlace2 = document.getElementById('op-output22');
+    const sizeShoesPlace3 = document.getElementById('op-output23');
+    //گرفتن موجود بودن یا نبودن محصول
+    const OK = document.querySelectorAll('.OK');
+    const NO = document.querySelectorAll('.NO');
+    //گرفتن دکمه باز کردن سبد خرید
+    const basketModal = document.getElementById('basketModal');
+    //گرفتن مودال سبد خرید
+    const modal = document.getElementById('modalMain');
+    const modalContent = document.getElementById('modalContent');
+    //گرفتن دکمه های افزودن به سبد خرید
+    const basket1 = document.getElementById('basket1');
+    const basket2 = document.getElementById('basket2');
+    //گرفتن اسم کفش در عرض های مختلف
+    const name1 = document.getElementById('name');
+    const name2 = document.getElementById('name2');
+    //گرفتن عکس کفش
+    const img1 = document.getElementById('i-right');
+    //گرفتن جزئیات کفش در عرض های مختلف
+    const options1 = document.querySelectorAll('.option');
+    const options2 = document.querySelectorAll('.option2');
+
+    //تابع تغییر موجود بودن یا نبودن محصول
+    function display() {
+        if (display1 === 'block') {
+            switch (colorShoes1.value) {
+                case 'مشکی-قهوه ای':
+                    OK.forEach(elm => elm.style.display = 'none');
+                    NO.forEach(elm => elm.style.display = 'inline');
+                    break;
+                case 'سفید-قهوه ای':
+                    useInDisplay(parseInt(sizeShoes1.value));
+                    return;
+                case 'کرمی-قهوه ای':
+                    if (parseInt(sizeShoes1.value) !== 37) {
+                        OK.forEach(elm => elm.style.display = 'none');
+                        NO.forEach(elm => elm.style.display = 'inline');
+                    } else {
+                        OK.forEach(elm => elm.style.display = 'inline');
+                        NO.forEach(elm => elm.style.display = 'none');
+                    }
+                    break;
+                default:
+                    alert('یک رنگ از لیست انتخاب کنید.');
+                    break;
+            }
+        }
+        if (display2 === 'block' && display31 === 'none' && display32 === 'none') {
+            switch (colorShoes2.value) {
+                case 'مشکی-قهوه ای':
+                    OK.forEach(elm => elm.style.display = 'none');
+                    NO.forEach(elm => elm.style.display = 'inline');
+                    break;
+                case 'سفید-قهوه ای':
+                    useInDisplay(parseInt(sizeShoes2.value));
+                    return;
+                case 'کرمی-قهوه ای':
+                    if (parseInt(sizeShoes2.value) !== 37) {
+                        OK.forEach(elm => elm.style.display = 'none');
+                        NO.forEach(elm => elm.style.display = 'inline');
+                    } else {
+                        OK.forEach(elm => elm.style.display = 'inline');
+                        NO.forEach(elm => elm.style.display = 'none');
+                    }
+                    break;
+                default:
+                    alert('یک رنگ از لیست انتخاب کنید.');
+                    break;
+            }
+        }
+        if (display31 === 'block' && display32 === 'block') {
+            switch (colorShoes3.value) {
+                case 'مشکی-قهوه ای':
+                    OK.forEach(elm => elm.style.display = 'none');
+                    NO.forEach(elm => elm.style.display = 'inline');
+                    break;
+                case 'سفید-قهوه ای':
+                    useInDisplay(parseInt(sizeShoes3.value));
+                    return;
+                case 'کرمی-قهوه ای':
+                    if (parseInt(sizeShoes3.value) !== 37) {
+                        OK.forEach(elm => elm.style.display = 'none');
+                        NO.forEach(elm => elm.style.display = 'inline');
+                    } else {
+                        OK.forEach(elm => elm.style.display = 'inline');
+                        NO.forEach(elm => elm.style.display = 'none');
+                    }
+                    break;
+                default:
+                    alert('یک رنگ از لیست انتخاب کنید.');
+                    break;
+            }
+        }
+    }
+
+    //تابعی برای بهینه تر شدن کد های display
+    function useInDisplay(x) {
+        switch (x) {
+            case 37:
+            case 38:
+            case 41:
+            case 42:
+                if (parseInt(numbersShoes1.value) > 2 || parseInt(numbersShoes2.value) > 2) {
+                    OK.forEach(elm => elm.style.display = 'none');
+                    NO.forEach(elm => elm.style.display = 'inline');
+                } else {
+                    OK.forEach(elm => elm.style.display = 'inline');
+                    NO.forEach(elm => elm.style.display = 'none');
+                }
+                break;
+            case 39:
+            case 40:
+                OK.forEach(elm => elm.style.display = 'none');
+                NO.forEach(elm => elm.style.display = 'inline');
+                break;
+            default:
+                alert('یک سایز از لیست انتخاب کنید.');
+        }
+    }
+
+    //تابع غیر فعال شدن دکمه های افزودن به سبد خرید
+    function deactivated() {
+        if (Array.from(OK).every(elm => elm.style.display === 'none') && Array.from(NO).every(elm => elm.style.display === 'inline')) {
+            basket1.disabled = true;
+            basket1.style.opacity = '0.3';
+            basket1.style.cursor = 'default';
+            //کد مشترک از اینجا شروع میشه
+            basket1.addEventListener('mouseover', () => basket1.style.color = '#ffffff');
+            basket1.addEventListener('mousedown', () => basket1.style.color = '#ffffff');
+            //و تا اینجا ادامه پیدا میکنه
+            basket2.disabled = true;
+            basket2.style.opacity = '0.3';
+            basket2.style.cursor = 'default';
+            //کد مشترک از اینجا شروع میشه
+            basket2.addEventListener('mouseover', () => basket2.style.color = '#ffffff');
+            basket2.addEventListener('mousedown', () => basket2.style.color = '#ffffff');
+            //و تا اینجا ادامه پیدا میکنه
+        } else {
+            basket1.disabled = false;
+            basket1.style.opacity = '1';
+            basket1.style.cursor = 'pointer';
+            //کد مشترک از اینجا شروع میشه
+            basket1.addEventListener('mouseover', () => basket1.style.color = '#ff0000');
+            basket1.addEventListener('mouseout', () => basket1.style.color = '');
+            //و تا اینجا ادامه پیدا میکنه
+            basket1.addEventListener('mousedown', () => basket1.style.color = '#000000');
+            basket1.addEventListener('mouseup', () => basket1.style.color = '#ff0000');
+            basket2.disabled = false;
+            basket2.style.opacity = '1';
+            basket2.style.cursor = 'pointer';
+            //کد مشترک از اینجا شروع میشه
+            basket2.addEventListener('mouseover', () => basket2.style.color = '#ff0000');
+            basket2.addEventListener('mouseout', () => basket2.style.color = '');
+            //و تا اینجا ادامه پیدا میکنه
+            basket2.addEventListener('mousedown', () => basket2.style.color = '#000000');
+            basket2.addEventListener('mouseup', () => basket2.style.color = '#ff0000');
+        }
+    }
+
+    deactivated();
+
+    //افزودن رویداد mouseover برای اجرای تابع deactivated
+    basket1.addEventListener('mouseover', deactivated);
+    basket2.addEventListener('mouseover', deactivated);
+
+    //تابع برای تغییر پیدا نکردن تعداد با کیبورد با استفاده از رویداد keydown
+    numbersShoes1.addEventListener('keydown', (e) => e.preventDefault());
+    numbersShoes2.addEventListener('keydown', (e) => e.preventDefault());
+
+    //تابع تغییر قیمت با تغییر تعداد محصول با استفاده از رویداد input
+    numbersShoes1.addEventListener('input', () => {
+        priceShoes1.value = parseInt(numbersShoes1.value) * 200000;
+        display();
+        deactivated();
+    });
+    numbersShoes2.addEventListener('input', () => {
+        priceShoes2.value = parseInt(numbersShoes2.value) * 200000;
+        display();
+        deactivated();
+    });
+
+    //تابع تغییر جای رنگ با تغییر رنگ محصول با استفاده از رویداد input
+    colorShoes1.addEventListener('input', () => {
+        colorShoesPlace1.value = 'رنگ: ' + colorShoes1.value;
+        display();
+        deactivated();
+    });
+    colorShoes2.addEventListener('input', () => {
+        colorShoesPlace2.value = 'رنگ: ' + colorShoes2.value;
+        display();
+        deactivated();
+    });
+    colorShoes3.addEventListener('input', () => {
+        colorShoesPlace3.value = 'رنگ: ' + colorShoes3.value;
+        display();
+        deactivated();
+    });
+
+    //تابع تغییر جای سایز با تغییر سایز محصول با استفاده از رویداد input
+    sizeShoes1.addEventListener('input', () => {
+        sizeShoesPlace1.value = 'سایز: ' + sizeShoes1.value;
+        display();
+        deactivated();
+    });
+    sizeShoes2.addEventListener('input', () => {
+        sizeShoesPlace2.value = 'سایز: ' + sizeShoes2.value;
+        display();
+        deactivated();
+    });
+    sizeShoes3.addEventListener('input', () => {
+        sizeShoesPlace3.value = 'سایز: ' + sizeShoes3.value;
+        display();
+        deactivated();
+    });
+
+    //افزودن رویداد کلیک به دکمه باز کردن سبد خرید
+    basketModal.addEventListener('click', () => {
+        if (modal.style.display === 'none') {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+    });
+
+    //افزودن رویداد کلیک به صفحه برای خروج از مودال
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    //بارگزاری داده ها از local storage یا ایجاد آرایه ای خالی
+    const list = JSON.parse(localStorage.getItem('list')) || [];
+
+
+</script>
+
+</body>
+
+</html>

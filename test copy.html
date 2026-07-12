@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جدول با اسکرول در tbody</title>
+    <style>
+        .table-container {
+            max-width: 100%; /* عرض جدول */
+            margin: 0 auto; /* وسط‌چین کردن جدول */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+
+        thead, tfoot {
+            background: #f1f1f1; /* پس‌زمینه برای سرتیتر و فوتر */
+        }
+
+        /* قسمت tbody */
+        tbody {
+            display: block;
+            max-height: 200px; /* حداکثر ارتفاع برای tbody */
+            overflow-y: auto; /* فعال‌سازی اسکرول عمودی */
+            width: 100%;
+        }
+
+        /* برای جلوگیری از بهم ریختگی جدول، ستون‌ها رو ثابت نگه می‌داریم */
+        tbody td, thead th {
+            width: 25%; /* عرض ستون‌ها */
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <table>
+        <thead>
+        <tr>
+            <th>قیمت کل</th>
+            <th>قیمت تکی</th>
+            <th>تعداد</th>
+            <th>عنوان</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>10000</td>
+            <td>5000</td>
+            <td>2</td>
+            <td>محصول A</td>
+        </tr>
+        <tr>
+            <td>20000</td>
+            <td>10000</td>
+            <td>2</td>
+            <td>محصول B</td>
+        </tr>
+        <tr>
+            <td>30000</td>
+            <td>15000</td>
+            <td>2</td>
+            <td>محصول C</td>
+        </tr>
+        <tr>
+            <td>40000</td>
+            <td>20000</td>
+            <td>2</td>
+            <td>محصول D</td>
+        </tr>
+        <tr>
+            <td>50000</td>
+            <td>25000</td>
+            <td>2</td>
+            <td>محصول E</td>
+        </tr>
+        <tr>
+            <td>60000</td>
+            <td>30000</td>
+            <td>2</td>
+            <td>محصول F</td>
+        </tr>
+        <tr>
+            <td>70000</td>
+            <td>35000</td>
+            <td>2</td>
+            <td>محصول G</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="2">مجموع</td>
+            <td colspan="2">280000</td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+
+</body>
+</html>

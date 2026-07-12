@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>تمرین 3</title>
+
+    <style>
+
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+            height: auto;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.25;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10;
+            transition: opacity 0.4s ease;
+            color: black;
+            border: none;
+            border-radius: 50%;
+        }
+
+        button:hover {
+            opacity: 1;
+        }
+
+        #keyBefore {
+            left: 0;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        #keyNext {
+            right: 0;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        .img {
+            width: 100%;
+            display: none;
+        }
+
+        .img.active {
+            display: block;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div id="container">
+    <button id="keyBefore">&#10094;</button>
+    <div>
+        <img class="img active" src="./images/calm-picture.PNG" alt="calm picture">
+        <img class="img" src="./images/aurora.png" alt="aurora">
+        <img class="img" src="./images/green.png" alt="green">
+    </div>
+    <button id="keyNext">&#10095;</button>
+</div>
+
+<script>
+
+    const images = document.querySelectorAll(".img");
+    const before = document.getElementById("keyBefore");
+    const next = document.getElementById("keyNext");
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        images.forEach((image) => image.classList.remove('active'));
+        images[index].classList.add('active');
+    }
+
+    showSlide(currentIndex);
+    before.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+        showSlide(currentIndex);
+    });
+    next.addEventListener('click', () => {
+        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+        showSlide(currentIndex);
+    });
+
+</script>
+
+</body>
+
+</html>

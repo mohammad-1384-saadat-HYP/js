@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Vazir', sans-serif;
+}
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('./fonts/collection-persian/vazir-font/Vazir.eot');
+    src: url('./fonts/collection-persian/vazir-font/Vazir.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/collection-persian/vazir-font/Vazir.woff2') format('woff2'),
+    url('./fonts/collection-persian/vazir-font/Vazir.woff') format('woff'),
+    url('./fonts/collection-persian/vazir-font/Vazir.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tanha';
+    src: url('./fonts/collection-persian/tanha-font/Tanha.eot');
+    src: url('./fonts/collection-persian/tanha-font/Tanha.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/collection-persian/tanha-font/Tanha.woff2') format('woff2'),
+    url('./fonts/collection-persian/tanha-font/Tanha.woff') format('woff'),
+    url('./fonts/collection-persian/tanha-font/Tanha.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>تمرین 5</title>
+
+    <style>
+
+        span {
+            margin: 0 10px;
+        }
+
+        .input {
+            font-size: 15px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .input:focus {
+            border-color: #4CAF50;
+            background-color: #f9f9f9;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<label>
+    <input id="input1" class="input" type="text">
+    <span>+</span>
+    <input id="input2" class="input" type="text">
+    <span>=</span>
+    <input id="output" class="input" type="text" readonly>
+</label>
+
+<script>
+
+    function sum() {
+        let num1 = document.getElementById('input1').value.replace(/,/g, '').trim();
+        let num2 = document.getElementById('input2').value.replace(/,/g, '').trim();
+        if (num1 === '' || num2 === '') {
+            num1 = 0;
+            num2 = 0;
+        }
+        const valid = /^-?\d+(\.\d+)?$/.test(num1) && /^-?\d+(\.\d+)?$/.test(num2);
+        if (valid) {
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+            document.getElementById('output').value = (num1 + num2).toLocaleString();
+        } else {
+            alert('مقدار وارد شده اشتباه است.');
+        }
+    }
+
+    document.getElementById('input1').addEventListener('input', sum);
+    document.getElementById('input2').addEventListener('input', sum);
+    document.querySelectorAll('.input').forEach(input => {
+        input.addEventListener('input', () => {
+            let x = input.value.replace(/,/g, '');
+            input.value = Number(x).toLocaleString();
+        });
+    });
+
+
+</script>
+
+</body>
+
+</html>
